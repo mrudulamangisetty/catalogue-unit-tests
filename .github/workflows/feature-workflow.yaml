@@ -5,9 +5,19 @@ on: [push]
 jobs:
   feature-pipeline:
     #if: github.ref_name == 'feature*' it literally comprares the same value
+    #on:
+      # push:
+      #  branches:
+      #   - feature-* here use like this
     if: startsWith(github.ref_name, 'feature-')
     uses: github/mrudulamang/workflows/.github/workflows/nodejs-feature-pipeline.git@main
     with:
       project: 'roboshop'
       component: 'catalogue'
       environment: 'dev'
+    secrets: inherit 
+        # toaccess screts from github and pass to shrd lib  
+        # secrets:                         ---- to acess specific secrets
+        # /*-AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+         # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
