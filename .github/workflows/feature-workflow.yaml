@@ -11,7 +11,7 @@ jobs:
       component: 'catalogue' 
       #environment: 'dev'
     secrets: inherit     
-          # to access screts from github and pass to shrd library          
+          # to access screts from github and pass to shrd library           
         # secrets:  ---- to acess specific secrets
         # /*-AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
          # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
