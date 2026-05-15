@@ -20,6 +20,6 @@ jobs:
 
     #if: github.ref_name == 'feature*' it literally comprares the same value
     #on:
-      # push: 
+      # push:  
       #  branches:
       #   - feature-* here use like this
