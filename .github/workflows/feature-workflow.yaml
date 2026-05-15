@@ -15,7 +15,7 @@ jobs:
       project: 'roboshop'
       component: 'catalogue' 
       #environment: 'dev'
-    secrets: inherit   
+    secrets: inherit    
           # to access screts from github and pass to shrd library      
         # secrets:  ---- to acess specific secrets
         # /*-AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
