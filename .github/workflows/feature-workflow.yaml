@@ -10,7 +10,7 @@ jobs:
       #  branches:
       #   - feature-* here use like this
     if: startsWith(github.ref_name, 'feature-')
-    uses: github/mrudulamangisetty/workflows/.github/workflows/nodejs-feature-pipeline.git@main
+    uses: mrudulamangisetty/workflows/.github/workflows/nodejs-feature-pipeline.git@main
     with:
       project: 'roboshop'
       component: 'catalogue'
