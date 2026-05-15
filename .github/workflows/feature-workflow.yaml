@@ -13,7 +13,7 @@ jobs:
     uses: mrudulamangisetty/workflows/.github/workflows/nodejs-feature-pipeline.yaml@main
     with:
       project: 'roboshop'
-      component: 'catalogue'
+      component: 'catalogue' 
       #environment: 'dev'
     secrets: inherit 
         # to access screts from github and pass to shrd library      
