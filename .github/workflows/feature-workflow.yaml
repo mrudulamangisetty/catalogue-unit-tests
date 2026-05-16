@@ -24,7 +24,7 @@ jobs:
     #on:  
 
       # push:  
-      #  branches:
+      #  branches: 
       #   - feature-* here use like this 
 
     # even with a Personal Access token(pat) added workflows  must explicitlly grant access to secuirty
