@@ -4,6 +4,8 @@ permissions:
   statuses: write 
   # workflow_dispatch button usually appears only when the
   # workflow exists in the repository’s default branch (often main or master) on GitHub
+  security-events: write # allows uploading/mdifying security scan results
+  contents: read # allows checking out code 
 jobs:
   feature-pipeline:
     if: startsWith(github.ref_name, 'feature-')
@@ -24,3 +26,6 @@ jobs:
       # push:  
       #  branches:
       #   - feature-* here use like this 
+
+    # even with a Personal Access token(pat) added workflows  must explicitlly grant access to secuirty
+      #    events because dependabot triggers run as read only by deafault
