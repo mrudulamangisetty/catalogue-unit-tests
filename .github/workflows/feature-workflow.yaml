@@ -5,7 +5,7 @@ permissions:
   # workflow_dispatch button usually appears only when the
   # workflow exists in the repository’s default branch (often main or master) on GitHub
   security-events: read # allows uploading/mdifying security scan results
-  contents: read # allows checking out code  
+  contents: read # allows checking out code  c
 jobs:
   feature-pipeline:
     if: startsWith(github.ref_name, 'feature-')
