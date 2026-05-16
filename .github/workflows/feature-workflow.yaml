@@ -19,7 +19,8 @@ jobs:
          # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     #if: github.ref_name == 'feature*' it literally comprares the same value
-    #on: 
+    #on:  
+    
       # push:  
       #  branches:
       #   - feature-* here use like this 
