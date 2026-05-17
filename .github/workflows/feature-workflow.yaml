@@ -1,13 +1,34 @@
 name: feature-workflow
 on: [push]
+permissions:
+  statuses: write 
   # workflow_dispatch button usually appears only when the
   # workflow exists in the repository’s default branch (often main or master) on GitHub
+  #security-events: read # allows uploading/mdifying security scan results
+  #contents: read # allows checking out code  c 
 jobs:
   feature-pipeline:
-    #if: github.ref_name == 'feature*' it literally comprares the same value
     if: startsWith(github.ref_name, 'feature-')
-    uses: github/mrudulamang/workflows/.github/workflows/nodejs-feature-pipeline.git@main
+    uses: mrudulamangisetty/workflows/.github/workflows/nodejs-feature-pipeline.yaml@main
     with:
-      project: 'roboshop'
-      component: 'catalogue'
-      environment: 'dev'
+      project: 'roboshop' 
+      component: 'catalogue' 
+      #environment: 'dev'
+    secrets: inherit      
+          # to access screts from github and pass to shrd library            
+        # secrets:  ---- to acess specific secretsb   
+        # /*-AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }} 
+         # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    #if: github.ref_name == 'feature*' it literally comprares the same value
+    #on:   
+
+      # push:   
+      #  branches: 
+      #   - feature-* here use like this   
+
+    # even with a Personal Access token(pat) added workflows  must explicitlly grant access to secuirty
+      #    events because dependabot triggers run as read only by deafault
+      #--------------
+      # if there isnt any change in any layer of the image  
+      #   push image cmd is executed but image is not pushed actually
